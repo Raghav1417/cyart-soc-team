@@ -1,1 +1,17 @@
 
+Alert Triage Report
+
+Alert ID: 002
+Description: Brute-force SSH attempts detected
+Source IP: 192.168.1.100
+Priority: Medium
+Status: Open
+
+Analysis:
+Multiple failed login attempts observed from the same IP address indicating a brute-force attack.
+
+Threat Intelligence:
+The IP was checked using AlienVault OTX and found suspicious.
+
+Conclusion:
+This is a valid security threat and requires monitoring or blocking.
