@@ -1,1 +1,26 @@
 
+SOC Alert-to-Response Project Summary
+
+This project simulates a full Security Operations Center (SOC) workflow.
+
+Steps performed:
+1. Created alert classification system with MITRE ATT&CK mapping.
+2. Prioritized alerts based on severity and CVSS scores.
+3. Documented incident response using templates.
+4. Performed alert triage and validated threats.
+5. Collected and preserved digital evidence with hash verification.
+6. Simulated an attack using Metasploit (VSFTPD exploit).
+7. Detected attack using Wazuh and responded by isolating system.
+8. Documented complete incident report and management briefing.
+
+Tools used:
+- Wazuh
+- Google Sheets
+- TheHive
+- VirusTotal
+- AlienVault OTX
+- Velociraptor
+- Metasploit
+
+Outcome:
+Successfully simulated detection, analysis, response, and documentation of a cyber attack.
