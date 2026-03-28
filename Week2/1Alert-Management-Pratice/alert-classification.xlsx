@@ -1,0 +1,7 @@
+| Alert ID | Type              | Priority  | MITRE Technique | Description                         |
+|----------|-------------------|-----------|-----------------|-------------------------------------|
+| 001      | Phishing          | High      | T1566           | Suspicious email with malicious link|
+| 002      | Brute Force       | Medium    | T1110           | Multiple failed SSH login attempts  |
+| 003      | Ransomware        | Critical  | T1486           | File encryption detected            |
+| 004      | Port Scan         | Low       | T1046           | Multiple ports scanned              |
+| 005      | Log4Shell Exploit | Critical  | T1190           | Remote code execution attempt       |
