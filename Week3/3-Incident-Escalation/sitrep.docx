@@ -1,1 +1,19 @@
 
+Title: Unauthorized Access on Server-Y
+
+Date: 18 August 2025
+Time: 13:00
+
+Summary:
+Unauthorized access detected from IP 192.168.1.200. Mapped to MITRE T1078 (Valid Accounts).
+
+Actions Taken:
+- Server isolated
+- Alert analyzed
+- Escalated to Tier 2
+
+Impact:
+Potential credential misuse
+
+Status:
+Under investigation
