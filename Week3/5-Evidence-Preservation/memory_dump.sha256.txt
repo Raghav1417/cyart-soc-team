@@ -1,0 +1,3 @@
+SHA256 hash of memory_dump.mem:
+0b74fdbb7af144295ea5ffcd262f818f1f6ac0bb4fa5d7d9bbf18f4ad73033a5
+CertUtil: -hashfile command completed successfully.
