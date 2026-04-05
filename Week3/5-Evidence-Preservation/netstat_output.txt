@@ -1,0 +1,2 @@
+Proto  Local Address          Foreign Address        State
+TCP    127.0.0.1:49732        0.0.0.0:0              LISTENING
