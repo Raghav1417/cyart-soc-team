@@ -1,0 +1,14 @@
+IOC: 185.220.101.1
+
+VirusTotal Result:
+
+* 14/94 detections
+* Marked as malicious
+
+OTX Result:
+
+* TOR Node
+* Linked to scanning and attacks
+
+Conclusion:
+High-risk IP requiring investigation
