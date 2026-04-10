@@ -1,0 +1,5 @@
+| Metric                  | Formula                            | Value       |
+| ----------------------- | ---------------------------------- | ----------- |
+| **MTTD**                | Detection Time - Attack Start Time | **2 hours** |
+| **MTTR**                | Response Time - Detection Time     | **4 hours** |
+| **False Positive Rate** | False Alerts / Total Alerts × 100  | **15%**     |
