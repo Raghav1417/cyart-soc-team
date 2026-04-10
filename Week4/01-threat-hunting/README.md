@@ -1,99 +1,73 @@
-#  Alert Triage with Automation
+# Threat Hunting Practice using Wazuh, Velociraptor & AlienVault OTX
 
-##  Objective
+## Objective
+The objective of this project is to perform threat hunting to detect misuse of valid accounts using MITRE ATT&CK technique T1078.
 
-To perform alert triage using Wazuh and validate suspicious activity using TheHive and VirusTotal.
+
+##  Hypothesis
+An attacker may use valid accounts to gain unauthorized privileged access on the system.
+
+
+## Tools Used
+- Wazuh (SIEM)
+- Velociraptor (Endpoint Monitoring)
+- AlienVault OTX (Threat Intelligence)
+
+
+##  Log Analysis (Wazuh)
+
+### Query Used:
+
+
+
+
+### Findings:
+- User `raghav` accessed root privileges using sudo (rule.id 5502)
+- Indicates privilege usage activity
+- Windows logs showed system activity (Event ID 16384)
 
 ---
 
-##  Tools Used
+##  Threat Intelligence (AlienVault OTX)
 
-* Wazuh (SIEM)
-* TheHive (Incident Response Platform)
-* VirusTotal (Threat Intelligence)
+### IOC Identified:
+- IP Address: 185.220.101.1  
+- Activity: Web scanning, SSH brute-force  
+- Technique: T1078 (Valid Accounts)
 
----
-
-##  Step 1: Alert Triage (Wazuh)
-
-Alerts were analyzed using the **Discover module** in Wazuh (`wazuh-alerts-*` index).
-
-* Investigated logs related to file activity
-* Observed security event:
-
-  * Rule ID: 52004
-  * Description: AppArmor denied operation
-  * Severity Level: 4
-
-### Triage Table (Mock Simulation)
-
-| Alert ID | Description   | Source IP     | Priority | Status |
-| -------- | ------------- | ------------- | -------- | ------ |
-| 005      | File Download | 192.168.1.102 | High     | Open   |
-
-
-##  Step 2: Case Creation (TheHive)
-
-* Created case: **Suspicious File Download**
-* Severity: **Medium**
-* TLP/PAP: **Amber**
-* Assigned to: SOC Analyst
+Additional indicators were found by searching T1078 in OTX pulses, which included multiple IPs associated with credential abuse and suspicious login activity.
 
 
 
-##  Step 3: Observable Analysis
+## Endpoint Analysis (Velociraptor)
 
-* Added file hash as observable:
-
-text
-44d88612fea8a8f36de82e1278abb02f
-
-* Tagged as: `malware`
-* Marked as IOC (Indicator of Compromise)
-
-
-
-##  Step 4: VirusTotal Validation
-
-The file hash was analyzed using VirusTotal.
-
-###  Result:
-
-* Detected by **multiple antivirus engines**
-* Labels included:
-
-  * EICAR-Test-File
-  * Win32:EICAR
-  * Malicious/Test Signature
-
- This confirms the file is **malicious (test malware)**
-
-
-
-##  Automation Insight
-
-* VirusTotal integration via Cortex was intended
-* Due to lab limitations, validation was performed manually
-* Still demonstrates **threat intelligence enrichment**
-
-
-
-##  Analysis Summary (50 Words)
-
-The alert was triaged in Wazuh by analyzing security logs. A suspicious file-related event was identified and escalated to TheHive. The file hash was validated using VirusTotal, which showed multiple detections across antivirus engines. This confirms malicious activity and demonstrates how automation improves threat validation and incident response efficiency.
-
-
-##  Screenshots
-
-* Wazuh Discover alerts
-* TheHive case creation
-* Observable (hash) added
-* VirusTotal detection results
+### Query Used:
 
 
 
 
-##  Outcome
+This was used to inspect running processes and identify any suspicious activity.
 
-Successfully performed alert triage and validated malicious activity using threat intelligence tools. The workflow demonstrates integration of SIEM, incident response, and external intelligence for efficient security operations.
 
+
+##  Correlation
+
+- Wazuh logs → Privileged access (sudo/root)
+- OTX → Malicious IP activity (credential abuse)
+- Velociraptor → Endpoint process monitoring
+
+ Combined analysis suggests possible misuse of valid credentials.
+
+
+##  Findings Summary
+
+| Timestamp            | User   | Event / Rule | Source   | Notes                    |
+|----------------------|--------|-------------|----------|--------------------------|
+| 2026-04-10 02:03:58  | raghav | 5502        | Wazuh    | sudo root privilege used |
+| 2026-04-09 02:32:23  | system | 16384       | Windows  | Defender activity        |
+
+
+
+##  Conclusion
+
+A threat hunting investigation was conducted based on MITRE ATT&CK T1078. While no confirmed attack was detected, privileged access activity was observed. Threat intelligence supported the possibility of credential abuse. Continuous monitoring and strict access control policies are recommended to mitigate risks.
