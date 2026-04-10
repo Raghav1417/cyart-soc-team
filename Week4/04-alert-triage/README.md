@@ -1,56 +1,50 @@
-#  Alert Triage with Automation using Wazuh, VirusTotal & TheHive
+# Alert Triage with Automation
 
-##  Objective
-The objective of this project is to triage security alerts and automate validation using threat intelligence tools.
+## Objective
+Perform alert triage using Wazuh and validate using VirusTotal, TheHive, and OTX.
 
+---
 
+## Tools Used
+- Wazuh
+- TheHive
+- VirusTotal
+- AlienVault OTX
 
-##  Tools Used
-- Wazuh (SIEM for alert detection)
-- VirusTotal (Threat Intelligence)
-- TheHive (Incident Response Platform)
+---
 
+## Task Overview
 
+### Alert Triage (Wazuh)
 
-##  Alert Triage (Wazuh)
+| Alert ID | Description              | Source IP     | Priority | Status |
+|----------|--------------------------|---------------|----------|--------|
+| 005      | Suspicious File Download | 192.168.56.1  | High     | Open   |
 
-A suspicious alert was analyzed in Wazuh.
+Wazuh logs show suspicious activity related to file operations and authentication.
 
-### Query Example:
+---
 
+### Automated Validation
 
-### Findings:
-A suspicious file download alert was detected from a local system.
+- File hash checked in VirusTotal
+- Case created in TheHive
+- IP checked in OTX
 
+---
 
+## Conclusion
 
-##  Triage Table
-
-| Alert ID | Description     | Source IP      | Priority | Status |
-|----------|----------------|----------------|----------|--------|
-| 005      | File Download  | 192.168.1.102  | High     | Open   |
-
-
-
-##  Automated Validation (VirusTotal)
-
-The file hash was checked using VirusTotal to determine if it is malicious.
-
-### Result:
-- The hash showed suspicious behavior
-- Detected by multiple antivirus engines
+The alert was validated using threat intelligence tools. VirusTotal confirmed malicious file (EICAR), and OTX showed suspicious IP activity. The case was managed in TheHive successfully.
 
 
 
-##  TheHive Automation
-
-TheHive was used to automate threat validation by integrating VirusTotal.
-
-- Alerts were enriched with threat intelligence
-- Hash lookup was automated
-- Case created for investigation
 
 
-##  Conclusion
 
-The alert triage process identified a suspicious file download. Automated validation using VirusTotal confirmed potential malicious activity. Integration with TheHive improved response efficiency by automating threat intelligence checks.
+
+
+
+
+
+
