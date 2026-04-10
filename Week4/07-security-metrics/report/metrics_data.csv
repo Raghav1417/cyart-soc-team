@@ -1,0 +1,6 @@
+Incident ID,Start Time,Detection Time,Response Time,Dwell Time,False Positive
+INC-001,10:00,12:00,16:00,2,No
+INC-002,09:00,11:00,14:00,2,Yes
+INC-003,08:30,10:30,13:00,2,No
+INC-004,11:00,13:30,17:30,2.5,Yes
+INC-005,07:00,09:00,12:00,2,No
