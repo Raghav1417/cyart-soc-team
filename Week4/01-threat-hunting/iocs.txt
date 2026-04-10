@@ -1,0 +1,9 @@
+IOC 1:
+IP Address: 185.220.101.1
+Source: AlienVault OTX
+Activity: Web scanning, SSH brute-force
+Technique: T1078 (Valid Accounts)
+
+IOC 2:
+Source: OTX Pulse (T1078 search)
+Activity: Credential abuse attempts
