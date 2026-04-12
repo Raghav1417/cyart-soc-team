@@ -1,0 +1,5 @@
+Timestamp,TTP,Detection Status,Notes
+2025-08-18 17:00:00,T1566,Detected,Phishing email blocked
+2025-08-18 17:05:00,T1566,Detected,Suspicious PowerShell execution
+2025-08-18 17:07:00,T1566,Partially Detected,User clicked malicious link
+2025-08-18 17:10:00,T1566,Not Detected,Payload execution missed
