@@ -14,11 +14,22 @@ Perform evidence analysis and maintain chain-of-custody using FTK Imager and net
 Due to environment limitations, Velociraptor functionality was simulated using the Windows `netstat` command.
 
 
+##  Memory Evidence Loading
+
+The memory dump (memcapture.ad1) was loaded into FTK Imager.
+
+- Format: AD1 (AccessData Evidence File)
+- Type: Memory Dump
+- Purpose: Analyze volatile memory artifacts
+
+Note: The file list appears empty because memory dumps contain raw data rather than structured files.
 
 
 
+##  Key
 
-##  Key Findings
+
+Findings
 
 ###  Normal Activity
 - Localhost (127.0.0.1)
