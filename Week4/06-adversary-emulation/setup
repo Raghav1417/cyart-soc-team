@@ -1,0 +1,22 @@
+# Setup Guide
+
+## Step 1: Start MITRE Caldera
+cd caldera
+python server.py --insecure
+
+## Step 2: Deploy Agent
+Run agent command on Windows VM:
+Invoke-WebRequest -Uri http://<caldera-ip>:8888/file/download -OutFile agent.ps1
+powershell -ExecutionPolicy Bypass -File agent.ps1
+
+## Step 3: Execute Attack
+- Login to Caldera UI
+- Select adversary profile
+- Run operation
+
+## Step 4: Monitor Wazuh
+- Open Wazuh Dashboard
+- Go to Security Events
+- Filter logs for:
+  - PowerShell
+  - Suspicious URLs
