@@ -12,6 +12,7 @@ This report documents the analysis of system evidence and network activity using
 ---
 
 ## 3. Evidence Analysis
+Memory evidence was successfully loaded into FTK Imager using the AD1 format. The evidence file "memcapture.ad1" represents a captured memory dump of the system. This allows forensic investigators to analyze volatile data such as running processes, network connections, and potential malicious artifacts.
 
 ### Command Executed:
 
@@ -46,7 +47,7 @@ This report documents the analysis of system evidence and network activity using
 
 3. Multiple dynamic ports (50000+ range)
 
----
+
 
 ## 5. Evidence Collection
 
