@@ -1,0 +1,71 @@
+# Evidence Analysis and Chain of Custody
+
+##  Objective
+Perform evidence analysis and maintain chain-of-custody using FTK Imager and network analysis.
+
+
+##  Tools Used
+- FTK Imager
+- Windows Command Prompt (Netstat)
+
+
+##  Evidence Analysis
+
+Due to environment limitations, Velociraptor functionality was simulated using the Windows `netstat` command.
+
+
+
+
+
+
+##  Key Findings
+
+###  Normal Activity
+- Localhost (127.0.0.1)
+- Private IPs (192.168.x.x)
+- Ports:
+  - 137, 138 → NetBIOS
+  - 1900 → UPnP
+  - 5353 → mDNS
+  - 123 → NTP
+
+
+
+###  Suspicious Activity
+- External IPv6 connections on port 443:
+  - 2606:4700:90c2:7cbc:c264:53b:5ff2:75c4
+  - 2405:200:160f:1731::312c:8950
+
+These may indicate encrypted communication (possible C2 traffic).
+
+
+
+##  Evidence Collection
+
+FTK Imager was used to:
+- Capture disk evidence
+- Extract files
+- Generate hash values (SHA256)
+
+
+
+##  Chain of Custody
+
+| Item        | Description              | Collected By | Date       | Hash Value |
+|-------------|--------------------------|--------------|------------|------------|
+| Network Log | Windows Netstat Output   | SOC Analyst  | 2025-08-18 | SampleHash123 |
+| Disk Image  | FTK Imager Export        | SOC Analyst  | 2025-08-18 | SampleHash456 |
+
+
+##  Screenshots
+
+All screenshots are available in the `/screenshots` folder:
+- Netstat Output
+- FTK Evidence Collection
+- Hash Values
+
+
+##  Conclusion
+
+Most network activity appears normal. However, external IPv6 HTTPS connections require further investigation to rule out malicious communication.
+
