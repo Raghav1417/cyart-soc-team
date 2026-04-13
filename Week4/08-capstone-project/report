@@ -1,0 +1,28 @@
+# Incident Response Report
+
+## Executive Summary
+A simulated cyber attack exploiting a Samba vulnerability was conducted. The attack was detected, analyzed, and contained successfully.
+
+## Timeline
+- Attack executed using Metasploit
+- Detection via logs
+- Triage using TheHive
+- Response using CrowdSec
+
+## Root Cause
+The system was vulnerable due to unpatched Samba service.
+
+## Response Actions
+- Case created in TheHive
+- Tasks assigned
+- Attacker IP blocked
+
+## Metrics
+- MTTD: 2 hours
+- MTTR: 4 hours
+- Dwell Time: 6 hours
+
+## Recommendations
+- Regular patching
+- Better monitoring
+- Automated response systems
